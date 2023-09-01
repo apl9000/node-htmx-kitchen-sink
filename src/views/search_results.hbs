@@ -1,0 +1,20 @@
+<table id='search-results'>
+  <thead>
+    <tr>ID</tr>
+    <tr>Name</tr>
+    <tr>Email</tr>
+  </thead>
+  <tbody class='overflow-scroll max-h-96' id='search-results'>
+    {{#each results}}
+      <tr
+        hx-get='results/{{email}}'
+        hx-target='#result'
+        class='border p-4 cursor-pointer'
+      >
+        <td>{{first_name}} {{last_name}}</td>
+        <td>{{email}}</td>
+        <td>{{id}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
