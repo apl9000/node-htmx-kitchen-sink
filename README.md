@@ -1,3 +1,4 @@
+# WORK IN PROGRESS
 ## Installation
 
 ```bash
@@ -12,6 +13,9 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
+
+# generating styles
+npx tailwindcss -i ./src/views/styles.css -o ./src/public/styles.css --watch
 
 # production mode
 $ npm run start:prod

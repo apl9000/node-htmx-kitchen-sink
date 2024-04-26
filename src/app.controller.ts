@@ -163,19 +163,29 @@ const results = [
   },
 ];
 
+const layout = {
+  title: 'NESTJS Kitchen Sink',
+  // description of an montreal based artist
+  description:
+    'A kitchen sink for buildig UI NestJS apps leveraging HTMX, Handlebars, TailwindCSS and few other utensils.',
+  links: [],
+};
+
 @Controller()
 export class AppController {
+
+  
   @Get()
-  @Render('index')
+  @Render('pages/index')
   root() {
     return {
-      title: 'Nextjs, HTMX/Handlebars TailwindCSS Boilerplate',
-      message: 'hello world',
+      ...layout,
+      message: 'Check Check Check it out!',
     };
   }
 
   @Post('search')
-  @Render('search_results')
+  @Render('components/search_results')
   search(@Req() request) {
     console.log(request.body);
     return {
