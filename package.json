@@ -6,6 +6,9 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "dev": "concurrently \"npm:*:dev\"",
+    "tailwind:build": "tailwindcss build src/views/styles.css -o src/public/styles.css",
+    "tailwind:dev": "tailwindcss build src/views/styles.css -o src/public/styles.css --watch",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -40,6 +43,7 @@
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "concurrently": "^8.2.2",
     "daisyui": "^4.10.2",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^9.0.0",
