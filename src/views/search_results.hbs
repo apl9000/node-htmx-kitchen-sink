@@ -1,0 +1,33 @@
+{{#if results}}
+<div class="overflow-x-auto"></div>
+  <table id='search-results' class="table">
+    <thead>
+      <tr>
+       <th>Package</th>
+        <th>Version</th>
+        <th>Dev Dependency</th>
+      </tr>
+    </thead>
+    <tbody class='overflow-scroll max-h-96'>
+      {{#each results}}
+        <tr
+          hx-get='results/{{name}}'
+          hx-target='#result'
+          class='hover'
+        >
+          <td>{{name}}</td>
+          <td>{{version}}</td>
+          <td>{{#if dev}} 
+            ✅
+            {{else}}
+            ❌
+            {{/if}}
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+{{else}}
+  <div class='p-4'>No results found</div>
+{{/if}}

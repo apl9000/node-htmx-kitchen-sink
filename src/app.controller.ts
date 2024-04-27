@@ -1,18 +1,30 @@
 import { Controller, Get, Render, Req, Post } from '@nestjs/common';
-import mockContactsData from './mock-contacts-data';
 
 const layout = {
-  title: 'NestJS Kitchen Sink',
-  // description of an montreal based artist
+  title: 'NestJS Kitchen 🚰',
   description:
     'A kitchen sink for buildig UI NestJS apps leveraging HTMX, Handlebars, TailwindCSS and few other utensils.',
   links: [],
 };
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const pkg = require('../package.json');
+const dependencies = [
+  ...Object.keys(pkg.dependencies).map((name) => ({
+    name,
+    version: pkg.dependencies[name],
+    dev: false,
+  })),
+  ...Object.keys(pkg.devDependencies).map((name) => ({
+    name,
+    version: pkg.devDependencies[name],
+    dev: true,
+  })),
+];
 
 @Controller()
 export class AppController {
   @Get()
-  @Render('pages/index')
+  @Render('index')
   root() {
     return {
       ...layout,
@@ -21,24 +33,24 @@ export class AppController {
   }
 
   @Post('search')
-  @Render('components/search_results')
+  @Render('search_results')
   search(@Req() request) {
     console.log(request.body);
     return {
       query: request.body.q,
       results: request.body.q
-        ? mockContactsData.filter(({ first_name }) =>
-          first_name.toLowerCase().startsWith(request.body.q.toLowerCase()),
+        ? dependencies.filter(({ name }) =>
+          name.toLowerCase().startsWith(request.body.q.toLowerCase()),
         )
-        : mockContactsData,
+        : dependencies,
     };
   }
 
-  @Get('results/:slug')
-  @Render('search_result')
-  about(@Req() request) {
-    return mockContactsData.filter(
-      (result) => result.email === request.params.slug,
-    )[0];
-  }
+  // @Get('results/:slug')
+  // @Render('search_result')
+  // about(@Req() request) {
+  //   return mockContactsData.filter(
+  //     (result) => result.email === request.params.slug,
+  //   )[0];
+  // }
 }
