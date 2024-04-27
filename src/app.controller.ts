@@ -3,7 +3,7 @@ import { Controller, Get, Render, Req, Post } from '@nestjs/common';
 const layout = {
   title: 'NestJS Kitchen 🚰',
   description:
-    'A kitchen sink for buildig UI NestJS apps leveraging HTMX, Handlebars, TailwindCSS and few other utensils.',
+    'A kitchen sink for building UI apps with NestJS, HTMX, Handlebars, TailwindCSS and few other utensils.',
   links: [],
 };
 // eslint-disable-next-line @typescript-eslint/no-var-requires
