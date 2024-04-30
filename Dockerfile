@@ -13,4 +13,5 @@ COPY . .
 RUN npm run tailwind:build
 RUN npm run build
 EXPOSE 8080
+
 ENTRYPOINT ["npm", "run", "start:prod"]
