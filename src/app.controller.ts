@@ -27,6 +27,7 @@ export class AppController {
   @Render('index')
   root() {
     return {
+      showLayout: true,
       ...layout,
       message: 'Check Check Check it out!',
     };
@@ -37,20 +38,13 @@ export class AppController {
   search(@Req() request) {
     console.log(request.body);
     return {
+      showLayout: false,
       query: request.body.q,
       results: request.body.q
         ? dependencies.filter(({ name }) =>
-          name.toLowerCase().startsWith(request.body.q.toLowerCase()),
-        )
+            name.toLowerCase().startsWith(request.body.q.toLowerCase()),
+          )
         : dependencies,
     };
   }
-
-  // @Get('results/:slug')
-  // @Render('search_result')
-  // about(@Req() request) {
-  //   return mockContactsData.filter(
-  //     (result) => result.email === request.params.slug,
-  //   )[0];
-  // }
 }
