@@ -43,7 +43,7 @@ async function bootstrap() {
       partials: loadPartials(join(__dirname, 'views', 'partials')),
     },
   });
-  await app.listen(process.env.PORT || 3000, '0.0.0.0');
+  await app.listen(process.env.PORT || 8080, '0.0.0.0');
   console.log(`${await app.getUrl()} awaiting orders!`);
 }
 bootstrap();
