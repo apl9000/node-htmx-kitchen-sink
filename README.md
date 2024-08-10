@@ -1,12 +1,16 @@
-# WORK IN PROGRESS
+# NestJS Kitchen 🚰
+A kitchen sink for building UI apps with NestJS, HTMX, Handlebars, TailwindCSS and few other utensils.
 
-## Installation
+### Getting Started
+Fork the project, install and start developing today. 
+
+#### Installation
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+#### Running the app
 
 ```bash
 # development
@@ -16,7 +20,7 @@ $ npm run dev
 $ npm run start:prod
 ```
 
-## Test
+#### Testing
 
 ```bash
 # unit tests
