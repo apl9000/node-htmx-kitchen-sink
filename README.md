@@ -1,4 +1,4 @@
-# NestJS Kitchen 🚰
+# HTMX NestJS Kitchen 🚰
 A kitchen sink for building UI apps with NestJS, HTMX, Handlebars, TailwindCSS and few other utensils.
 
 [demo](https://stingray-app-dkeuh.ondigitalocean.app/)
