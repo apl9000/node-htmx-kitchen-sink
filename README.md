@@ -18,7 +18,7 @@ Fork the project, install and start developing.
 ### 1. Clone and Install
 
 ```bash
-git clone https://github.com/aperkslabbe/htmx-nestjs-kitchen-sink.git
+git clone https://github.com/aperkslabbe/node-htmx-kitchen-sink.git
 
 cd htmx-nestjs-kitchen-sink
 
