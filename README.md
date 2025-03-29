@@ -20,7 +20,7 @@ Fork the project, install and start developing.
 ```bash
 git clone https://github.com/apl9000/node-htmx-kitchen-sink.git
 
-cd htmx-nestjs-kitchen-sink
+cd node-htmx-kitchen-sink
 
 npm install
 ```
