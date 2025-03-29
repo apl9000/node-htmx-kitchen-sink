@@ -1,4 +1,4 @@
-# 🚰 HTMX NestJS Kitchen Sink
+# 🚰 Node HTMX Kitchen Sink
 
 A kitchen sink for building UI apps with NestJS, HTMX, Handlebars, TailwindCSS and few other utensils.
 
@@ -59,6 +59,23 @@ $ npm run test:cov
 - Layouts and partials with Handlebars
 - Tailwind setup out of the box
 - Development hot-reloading
+
+## 📂 Project Structure
+
+```csharp
+htmx-nestjs-kitchen-sink/
+├── src/
+│   ├── public/            # Static assets
+│   ├── views/             # Handlebars views
+│   │   ├── layouts/
+│   │   ├── partials/
+│   │   └── ...
+│   ├── app.controller.ts  # Core controller logic
+│   └── main.ts            # App bootstrap
+├── package.json
+└── README.md
+
+```
 
 ## Contributing
 
